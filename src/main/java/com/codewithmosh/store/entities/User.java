@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -53,6 +55,7 @@ public class User {
         joinColumns = @JoinColumn(name = "user_id"),
         inverseJoinColumns = @JoinColumn(name = "product_id")
     )
+    @Builder.Default
     private Set<Product> favoriteProducts = new HashSet<>();
 
     public void addFavoriteProduct(Product product) {
